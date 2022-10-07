@@ -8,6 +8,14 @@
 			날짜 : 2022/10/07
 			이름 : 최아영
 			내용 : JSP useBean 액션태그 실습하기
+			
+			useBean 액션태그
+			 - 자바빈을 활용해서 전송 데이터를 수신하고 객체를 생성하는 태그
+			
+			자바빈(JavaBean)
+			 - 일반적으로 JSP에서 사용하는 데이터 전송 객체
+			 - Form과 DB Table의 필드를 멤버로 갖는 클래스
+			 - MVC 모델과 Spring에서 자바빈을 VO(Value Object) 또는 DTO(Data Transfer Object) 객체로 부름
 		-->	
 	</head>
 	<body>
