@@ -7,12 +7,13 @@
 		<!-- 
 			날짜 : 2022/10/12
 			이름 : 최아영
-			내용 : JSP 데이터베이스 프로그래밍 실습하기
+			내용 : JSP 데이터베이스 프로그래밍 실습하기 
 		 -->
 	</head>
 	<body>
-		<h3>JDBC 실습</h3>
+		<h3>CRUD 실습</h3>
+		<a href="./user/register.jsp">User 실습하기</a><br/>
+		<a href="./member/register.jsp">Member 실습하기</a><br/>
 		
-		<a href="./user/register.jsp">User 실습하기</a>
 	</body>
 </html>
