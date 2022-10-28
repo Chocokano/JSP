@@ -87,4 +87,18 @@
     	maxWaitMillis="3000"
     />
     
+    <!-- 커넥션 풀 설정 -->
+    <Resource
+    	name="dbcp_java1_Shop"
+    	auth="Container"
+    	type="javax.sql.DataSource"
+    	driverClassName="com.mysql.cj.jdbc.Driver"
+    	url="jdbc:mysql://127.0.0.1:3306/java1_Shop"
+    	username="root"
+    	password="1234"
+    	maxTotal="8"
+    	maxIdle="8"
+    	maxWaitMillis="3000"
+    />
+    
 </Context>
