@@ -30,7 +30,7 @@
 	$(document).ready(function(){
 		
 		// 삭제하기
-		$(document).on('click','.remove', function(e){
+		$(document).on('click', '.remove', function(e){
 			e.preventDefault();
 			
 			let tag = $(this);
@@ -41,10 +41,9 @@
 				let no = $(this).attr('data-no');
 				
 				$.ajax({
-					url:'/JBoard1/proc/commentDeleteProc.jsp?no='+no,
-					type:'GET',
-					data:'json',
-					dataType:'',
+					url: '/JBoard1/proc/commentDeleteProc.jsp?no='+no,
+					type: 'GET',
+					dataType: 'json',
 					success: function(data){
 						
 						if(data.result > 0){
@@ -52,15 +51,11 @@
 							
 							// 화면삭제
 							tag.closest('article').hide();
-							
-							
 						}
 					}
 				});
-				
 			}
 		});
-		
 		
 		// 수정하기
 		$(document).on('click', '.modify', function(e){
@@ -100,6 +95,7 @@
 					}
 				});
 			}
+			
 			
 		});
 		
@@ -171,8 +167,10 @@
     </table>
 
     <div>
-        <a href="#" class="btn btnRemove">삭제</a>
-        <a href="/JBoard1/modify.jsp" class="btn btnModify">수정</a>
+    	<% if(sessUser.getUid().equals(article.getUid())){ %>
+        <a href="/JBoard1/proc/deleteProc.jsp?no=<%= article.getNo() %>&pg=<%= pg %>" class="btn btnRemove">삭제</a>
+        <a href="/JBoard1/modify.jsp?no=<%= article.getNo() %>&pg=<%= pg %>" class="btn btnModify">수정</a>
+        <% } %>
         <a href="/JBoard1/list.jsp?pg=<%= pg %>" class="btn btnList">목록</a>
     </div>
 
@@ -185,10 +183,12 @@
             <span class="nick"><%= comment.getNick() %></span>
             <span class="date"><%= comment.getRdate() %></span>                    
             <p class="content"><%= comment.getContent() %></p>
+            <% if(sessUser.getUid().equals(comment.getUid())){ %>
             <div>
                 <a href="#" class="remove" data-no="<%= comment.getNo() %>">삭제</a>
                 <a href="#" class="modify" data-no="<%= comment.getNo() %>">수정</a>
             </div>
+            <% } %>
         </article>
         <% } %>
             
