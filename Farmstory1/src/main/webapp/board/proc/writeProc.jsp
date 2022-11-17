@@ -13,7 +13,7 @@
 	String savePath = application.getRealPath("/file");
 	int maxSize = 1024 * 1024 * 10; // 최대 파일 업로드 허용량 10MB
 	MultipartRequest mr = new MultipartRequest(request, savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
-
+	
 	String group   = mr.getParameter("group");
 	String cate    = mr.getParameter("cate");
 	String uid     = mr.getParameter("uid");
