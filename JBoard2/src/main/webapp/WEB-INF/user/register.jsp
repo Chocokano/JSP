@@ -3,9 +3,89 @@
 <script src="http://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="/JBoard2/js/postcode.js"></script>
 <script src="/JBoard2/js/validation.js"></script>
+<script>
+	
+	let isEmailAuthOk = false;
+	let receivedCode = 0;
+
+	// 이메일 인증
+	$(function(){
+		
+		// 이메일 인증코드 발송 클릭
+		$('#btnEmail').click(function(){
+			
+			$(this).hide();			
+			let email = $('input[name=email]').val();
+			console.log('here1 : ' + email);
+			
+			if(email == ''){
+				alert('이미엘을 입력 하세요.');
+				return;
+			}
+			
+			if(isEmailAuthOk){
+				console.log('here2');
+				return;
+			}
+			
+			isEmailAuthOk = true;
+			
+			$('.resultEmail').text('인증코드 전송 중 입니다. 잠시만 기다리세요...');
+			console.log('here3');
+			
+			setTimeout(function(){
+				console.log('here4');
+				
+				$.ajax({
+					url: '/JBoard2/user/emailAuth.do',
+					method: 'GET',
+					data: {"email": email},
+					dataType: 'json',
+					success: function(data){
+						//console.log(data);
+						
+						if(data.status > 0){
+							// 메일전송 성공
+							console.log('here5');
+							isEmailAuthOk = true;
+							$('.resultEmail').text('이메일을 확인 후 인증코드를 입력하세요.');
+							$('.auth').show();
+							receivedCode = data.code;
+							
+						}else{
+							// 메일전송 실패
+							console.log('here6');
+							isEmailAuthOk = false;
+							alert('메일전송이 실패 했습니다.\n다시 시도 하시기 바랍니다.');
+						}
+					}
+				});
+			}, 1000);
+		});
+		
+		
+		// 이메일 인증코드 확인 버튼
+		$('#btnEmailConfirm').click(function(){
+			
+			let code = $('input[name=auth]').val();
+			
+			if(code == ''){
+				alert('이메일 확인 후 인증코드를 입력하세요.');
+				return;
+			}
+			
+			if(code == receivedCode){
+				$('input[name=email]').attr('readonly', true);
+				$('.resultEmail').text('이메일이 인증 되었습니다.');				
+				$('.auth').hide();
+			}else{
+				alert('인증코드가 틀립니다.\n다시 확인 하십시요.');
+			}
+		});
+	});
+</script>
 <main id="user">
     <section class="register">
-
         <form action="/JBoard2/user/register.do" method="post">
             <table border="1">
                 <caption>사이트 이용정보 입력</caption>
@@ -36,7 +116,7 @@
                     <td>이름</td>
                     <td>
                         <input type="text" name="name" placeholder="이름 입력"/>
-                        <span class="resultName"></span>                 
+                        <span class="resultName"></span>     
                     </td>
                 </tr>
                 <tr>
@@ -53,10 +133,10 @@
                     <td>
                         <input type="email" name="email" placeholder="이메일 입력"/>
                         <span class="resultEmail"></span>
-                        <button type="button"><img src="../img/chk_auth.gif" alt="인증번호 받기"/></button>
+                        <button type="button" id="btnEmail"><img src="../img/chk_auth.gif" alt="인증번호 받기"/></button>
                         <div class="auth">
                             <input type="text" name="auth" placeholder="인증번호 입력"/>
-                            <button type="button"><img src="../img/chk_confirm.gif" alt="확인"/></button>
+                            <button type="button" id="btnEmailConfirm"><img src="../img/chk_confirm.gif" alt="확인"/></button>
                         </div>
                     </td>
                 </tr>

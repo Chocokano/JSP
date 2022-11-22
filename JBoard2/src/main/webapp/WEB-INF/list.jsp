@@ -1,12 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<jsp:include page="/_header.jsp"/>
+<jsp:include page="./_header.jsp"/>
 <main id="board">
     <section class="list">                
         <form action="#">
             <input type="text" name="search" placeholder="제목 키워드, 글쓴이 검색">
             <input type="submit" value="검색">
         </form>
-        
         <table border="0">
             <caption>글목록</caption>
             <tr>
@@ -36,5 +35,5 @@
         <a href="./write.html" class="btn btnWrite">글쓰기</a>
     </section>
 </main>
-<jsp:include page="/_footer.jsp"/>
+<jsp:include page="./_footer.jsp"/>
         
