@@ -18,7 +18,7 @@ public class GmailTest {
 		String sender = "lovelyroaflower@gmail.com";
 		String password = "izyasdkwakltkyjz";
 		
-		String receiver = "mizhara001@naver.com";
+		String receiver = "1999millenni@naver.com";
 		String title = "테스트 메일 입니다.2";
 		String content = "테스트 완료2";
 		
