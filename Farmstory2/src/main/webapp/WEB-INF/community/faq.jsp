@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,16 +37,16 @@
                         <li><a href="./notice.html">공지사항</a></li>
                         <li><a href="./menu.html">오늘의식단</a></li>
                         <li><a href="./chef.html">나도요리사</a></li>
-                        <li class="on"><a href="./qna.html">1:1고객문의</a></li>
-                        <li><a href="./faq.html">자주묻는질문</a></li>
+                        <li><a href="./qna.html">1:1고객문의</a></li>
+                        <li class="on"><a href="./faq.html">자주묻는질문</a></li>
                     </ul>
 
                 </aside>
                 <article>
                     <nav>
-                        <img src="../img/sub_nav_tit_cate5_tit4.png" alt="1:1고객문의"/>
+                        <img src="../img/sub_nav_tit_cate5_tit5.png" alt="자주묻는질문"/>
                         <p>
-                            HOME > 커뮤니티 > <em>1:1고객문의</em>
+                            HOME > 커뮤니티 > <em>자주묻는질문</em>
                         </p>
                     </nav>
 

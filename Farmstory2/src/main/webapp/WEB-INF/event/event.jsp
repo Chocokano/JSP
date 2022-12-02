@@ -1,8 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>팜스토리::커뮤니티</title>
+    <title>팜스토리::이벤트</title>
     <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
@@ -27,25 +28,21 @@
         </header>
 
         <div id="sub">
-            <div><img src="../img/sub_top_tit5.png" alt="COMMUNITY"></div>
-            <section class="cate5">
+            <div><img src="../img/sub_top_tit4.png" alt="CROP TALK"></div>
+            <section class="cate4">
                 <aside>
-                    <img src="../img/sub_aside_cate5_tit.png" alt="커뮤니티"/>
+                    <img src="../img/sub_aside_cate4_tit.png" alt="이벤트"/>
 
                     <ul class="lnb">
-                        <li class="on"><a href="./notice.html">공지사항</a></li>
-                        <li><a href="./menu.html">오늘의식단</a></li>
-                        <li><a href="./chef.html">나도요리사</a></li>
-                        <li><a href="./qna.html">1:1고객문의</a></li>
-                        <li><a href="./faq.html">자주묻는질문</a></li>
+                        <li class="on"><a href="./event.html">이벤트</a></li>
                     </ul>
 
                 </aside>
                 <article>
                     <nav>
-                        <img src="../img/sub_nav_tit_cate5_tit1.png" alt="공지사항"/>
+                        <img src="../img/sub_nav_tit_cate4_tit1.png" alt="이벤트"/>
                         <p>
-                            HOME > 커뮤니티 > <em>공지사항</em>
+                            HOME > 이벤트 > <em>이벤트</em>
                         </p>
                     </nav>
 
