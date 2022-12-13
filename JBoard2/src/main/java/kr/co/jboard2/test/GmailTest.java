@@ -15,8 +15,8 @@ public class GmailTest {
 	public static void main(String[] args) {
 		
 		// 기본정보
-		String sender = "lovelyroaflower@gmail.com";
-		String password = "izyasdkwakltkyjz";
+		String sender = "";
+		String password = "";
 		
 		String receiver = "1999millenni@naver.com";
 		String title = "테스트 메일 입니다.2";
