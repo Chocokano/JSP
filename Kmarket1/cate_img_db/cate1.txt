@@ -1,0 +1,4 @@
+thumb 1 190 x 190
+thumb 2 230 x 230
+thumb 3 456 x 456
+thumb 4 940 x 940
